@@ -9,4 +9,9 @@ export default defineConfig({
   minify: false,
   splitting: false,
   target: 'es2022',
+  outExtension({ format }) {
+    return {
+      js: format === 'esm' ? '.js' : '.cjs',
+    };
+  },
 });

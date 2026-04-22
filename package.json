@@ -1,36 +1,31 @@
 {
   "name": "citrus-forge-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript SDK for milestone-journal Clarity contract interactions on Stacks.",
-  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
-    "dist",
-    "examples",
-    "README.md",
-    "LICENSE"
+    "dist"
   ],
-  "sideEffects": false,
   "scripts": {
-    "clean": "rimraf dist",
     "build": "tsup",
     "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepublishOnly": "npm run clean && npm run lint && npm run typecheck && npm run test && npm run build",
-    "pack:check": "npm pack --dry-run",
-    "publish:dry-run": "npm publish --dry-run --access public"
+    "test:utils": "vitest run test/client.test.ts",
+    "test:vault": "vitest run test/client.test.ts",
+    "test:constants": "vitest run test/client.test.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test --ext .ts",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "stacks",
@@ -42,13 +37,10 @@
   ],
   "author": "",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanmipaul/flut-sdk"
   },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@10",
   "dependencies": {
     "@stacks/transactions": "^7.4.0"
   },
