@@ -12,13 +12,13 @@ TypeScript SDK for interacting with the `milestone-journal` Clarity contract.
 ## Installation
 
 ```bash
-npm install citrus-forge-sdk @stacks/transactions
+npm install @rednevsky/citrus-forge-sdk @stacks/transactions
 ```
 
 ## Quick Start
 
 ```ts
-import { MilestoneJournalSDK } from "citrus-forge-sdk";
+import { MilestoneJournalSDK } from "@rednevsky/citrus-forge-sdk";
 
 const sdk = new MilestoneJournalSDK({
   contractAddress: "SP123...",

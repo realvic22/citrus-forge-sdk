@@ -1,5 +1,5 @@
 {
-  "name": "citrusstacks-sdk",
+  "name": "@rednevsky/citrus-forge-sdk",
   "version": "0.1.1",
   "description": "TypeScript SDK for milestone-journal Clarity contract interactions on Stacks.",
   "main": "./dist/index.cjs",
