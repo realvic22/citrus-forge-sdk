@@ -18,13 +18,13 @@ npm install citrus-forge-sdk @stacks/transactions
 ## Quick Start
 
 ```ts
-import { MilestoneJournalSDK } from 'citrus-forge-sdk';
+import { MilestoneJournalSDK } from "citrus-forge-sdk";
 
 const sdk = new MilestoneJournalSDK({
-  contractAddress: 'SP123...',
-  contractName: 'milestone-journal',
-  network: 'mainnet',
-  apiBaseUrl: 'https://api.hiro.so',
+  contractAddress: "SP123...",
+  contractName: "milestone-journal",
+  network: "mainnet",
+  apiBaseUrl: "https://api.hiro.so",
 });
 
 const projectNonce = await sdk.getProjectNonce();
@@ -34,15 +34,20 @@ const projects = await sdk.getAllProjects();
 ## Build tx payloads
 
 ```ts
-const createPayload = sdk.buildCreateProject('Neon Engine', 'Project summary');
-const postPayload = sdk.buildPostAttestation(1, 2, 'Reached milestone 2', 'bafy...');
+const createPayload = sdk.buildCreateProject("Neon Engine", "Project summary");
+const postPayload = sdk.buildPostAttestation(
+  1,
+  2,
+  "Reached milestone 2",
+  "bafy...",
+);
 const coSignPayload = sdk.buildCoSign(1);
 ```
 
 ## Execute with Stacks Connect
 
 ```ts
-import { request } from '@stacks/connect';
+import { request } from "@stacks/connect";
 
 await sdk.requestContractCall(request, postPayload);
 ```
